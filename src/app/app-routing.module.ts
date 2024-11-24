@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent }, // Маршрут для компонента
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Перенаправлення за замовчуванням
-  { path: '**', redirectTo: '/home' } // Перенаправлення для невідомих маршрутів
+  { path: 'home', component: HomeComponent }, 
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
+  { path: '**', redirectTo: '/home' } 
 ];
 
 @NgModule({
