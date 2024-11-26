@@ -21,7 +21,7 @@ export class HomeComponent {
     if (!this.selectedFile) return;
 
     this.hashService.calculateDigest(this.selectedFile, 8).subscribe((data: any) => {
-      this.digest = data;
+      this.digest = data.hash;
     });
   }
 

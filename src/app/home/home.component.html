@@ -4,5 +4,5 @@
     <button class="btn btn-dark mr-3" (click)="calculateDigest()">Calculate Digest</button>
     <button class="btn btn-light" (click)="generateCollision()">Generate Collision</button> <br> <br>
     <p *ngIf="digest">Digest: {{ digest }}</p>
-    <p *ngIf="collision">Collision: {{ collision }}</p>
+    <p *ngIf="collision">Collision: {{ collision.modifiedBytes }} , {{ collision.newHash }} </p>
 </div>

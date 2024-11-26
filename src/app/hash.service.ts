@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class HashService {
-  private apiUrl = 'http://localhost:5000/api/hash';
+  private apiUrl = 'https://localhost:7240/api/hash';
 
   constructor(private http: HttpClient) {}
 
