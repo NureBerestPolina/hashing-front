@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HashService } from '../hash.service';
+import { BindingType } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ export class HomeComponent {
   selectedFile!: File;
   digest: string | null = null;
   collision: any = null;
+  bitNumber: number = 8; 
 
   constructor(private hashService: HashService) {}
 
@@ -17,18 +19,18 @@ export class HomeComponent {
     this.selectedFile = event.target.files[0];
   }
 
-  calculateDigest() {
+  calculateDigest(bitNumber: number = this.bitNumber) {
     if (!this.selectedFile) return;
 
-    this.hashService.calculateDigest(this.selectedFile, 8).subscribe((data: any) => {
+    this.hashService.calculateDigest(this.selectedFile, bitNumber).subscribe((data: any) => {
       this.digest = data.hash;
     });
   }
 
-  generateCollision() {
+  generateCollision(bitNumber: number = this.bitNumber) {
     if (!this.selectedFile) return;
 
-    this.hashService.generateCollision(this.selectedFile, 8).subscribe((data: any) => {
+    this.hashService.generateCollision(this.selectedFile, bitNumber).subscribe((data: any) => {
       this.collision = data;
     });
   }

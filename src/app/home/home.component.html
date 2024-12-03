@@ -1,8 +1,18 @@
 <div class="m-3">
-    <h1>Hash Lab 3, <span class="text-muted"> Berest, Burhard </span> </h1> <br>
+    <h1>Hash Lab 3, <span class="text-muted">Berest, Burhard</span></h1>
+    <br>
+    
     <input type="file" (change)="onFileSelected($event)" />
+    <br><br>
+    
+    <label for="bitNumber">Enter Bit Number:</label>
+    <input type="number" id="bitNumber" [(ngModel)]="bitNumber" class="form-control w-25" placeholder="2, 4, or 8" />
+    <br>
+    
     <button class="btn btn-dark mr-3" (click)="calculateDigest()">Calculate Digest</button>
-    <button class="btn btn-light" (click)="generateCollision()">Generate Collision</button> <br> <br>
+    <button class="btn btn-light" (click)="generateCollision()">Generate Collision</button>
+    
+    <br><br>
     <p *ngIf="digest">Digest: {{ digest }}</p>
-    <p *ngIf="collision">Collision: {{ collision.modifiedBytes }} , {{ collision.newHash }} </p>
+    <p *ngIf="collision">Collision: {{ collision.modifiedBytes }} , {{ collision.newHash }}</p>
 </div>
